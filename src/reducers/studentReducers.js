@@ -5,9 +5,16 @@ export const studentState = {
 export const studentReducer = (state, action) => {
     switch(action.type){
         case 'ADD_STUDENT':
-            return state;
+            const newStudent = {
+                id: action.id,
+                name: action.name
+            }
+            const allStudent = [...state.students, newStudent];
+            return {students: allStudent};
         case 'REMOVE_STUDENT':
-            return state;
+            const remaining = state.students.filter(student => student.id !== action.id);
+            const newState = {students: remaining};
+            return newState;
         default:
             return state;
     }

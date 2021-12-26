@@ -1,6 +1,7 @@
 import { useReducer } from 'react';
 import './App.css';
 import StudentManagement from './components/StudentManagement/StudentManagement';
+import ShopManagement from './components/ShopManagement/ShopManagement';
 
 const initialState = {count: 0};
 
@@ -24,6 +25,7 @@ function App() {
       <button onClick={() => dispatch({type: 'INCREMENT'})}>Increment</button>
       <button onClick={() => dispatch({type: 'DECREMENT'})}>Increment</button>
       <StudentManagement></StudentManagement>
+      <ShopManagement></ShopManagement>
     </div>
   );
 }
